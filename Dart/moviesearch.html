@@ -7,19 +7,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dart - Movie Recommendation</title>
 
-  <!-- 
-    - favicon
-  -->
+  <!-- favicon -->
   <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
 
-  <!-- 
-    - custom css link
-  -->
+  <!-- custom css link -->
   <link rel="stylesheet" href="./assets/css/style.css">
 
-  <!-- 
-    - google font link
-  -->
+  <!-- google font link -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -27,10 +21,7 @@
 
 <body id="top">
 
-  <!-- 
-    - #HEADER
-  -->
-
+  <!-- HEADER -->
   <header class="header" data-header>
     <div class="container">
 
@@ -41,7 +32,6 @@
       </a>
 
       <div class="header-actions">
-
         <a href="moviesearch.html" class="search-btn">
           <ion-icon name="search-outline"></ion-icon>
         </a>
@@ -50,7 +40,6 @@
           <label for="language">
             <ion-icon name="globe-outline"></ion-icon>
           </label>
-
           <select name="language" id="language">
             <option value="en">EN</option>
             <option value="au">AU</option>
@@ -60,7 +49,6 @@
         </div>
 
         <button class="btn btn-primary">Sign in</button>
-
       </div>
 
       <button class="menu-open-btn" data-menu-open-btn>
@@ -68,71 +56,29 @@
       </button>
 
       <nav class="navbar" data-navbar>
-
         <div class="navbar-top">
-
           <a href="./index.html" class="logo">
             <img src="./assets/images/logo2.png" alt="Filmlane logo">
           </a>
-
           <button class="menu-close-btn" data-menu-close-btn>
             <ion-icon name="close-outline"></ion-icon>
           </button>
-
         </div>
 
         <ul class="navbar-list">
-
-          <li>
-            <a href="./index.html" class="navbar-link">Recommendation engine</a>
-          </li>
-
-          <li>
-            <a href="./community.html" class="navbar-link">Community</a>
-          </li>
-
-          <li>
-            <a href="./moviedatabase.html" class="navbar-link">Movie Database</a>
-          </li>
-
+          <li><a href="./index.html" class="navbar-link">Recommendation engine</a></li>
+          <li><a href="./community.html" class="navbar-link">Community</a></li>
+          <li><a href="./moviedatabase.html" class="navbar-link">Movie Database</a></li>
         </ul>
 
         <ul class="navbar-social-list">
-
-          <li>
-            <a href="#" class="navbar-social-link">
-              <ion-icon name="logo-twitter"></ion-icon>
-            </a>
-          </li>
-
-          <li>
-            <a href="#" class="navbar-social-link">
-              <ion-icon name="logo-facebook"></ion-icon>
-            </a>
-          </li>
-
-          <li>
-            <a href="#" class="navbar-social-link">
-              <ion-icon name="logo-pinterest"></ion-icon>
-            </a>
-          </li>
-
-          <li>
-            <a href="#" class="navbar-social-link">
-              <ion-icon name="logo-instagram"></ion-icon>
-            </a>
-          </li>
-
-          <li>
-            <a href="#" class="navbar-social-link">
-              <ion-icon name="logo-youtube"></ion-icon>
-            </a>
-          </li>
-
+          <li><a href="#" class="navbar-social-link"><ion-icon name="logo-twitter"></ion-icon></a></li>
+          <li><a href="#" class="navbar-social-link"><ion-icon name="logo-facebook"></ion-icon></a></li>
+          <li><a href="#" class="navbar-social-link"><ion-icon name="logo-pinterest"></ion-icon></a></li>
+          <li><a href="#" class="navbar-social-link"><ion-icon name="logo-instagram"></ion-icon></a></li>
+          <li><a href="#" class="navbar-social-link"><ion-icon name="logo-youtube"></ion-icon></a></li>
         </ul>
-
       </nav>
-
     </div>
   </header>
 
@@ -140,12 +86,33 @@
   <main>
     <section class="search-section">
       <div class="container">
-        <form action="moviesearch.html" method="get" class="search-form">
-          <input type="text" name="query" class="search-input" placeholder="Search for movies..." required>
-          <button type="submit" class="btn btn-primary search-button">Search</button>
-        </form>
+        <h1>Movie Search</h1>
+        <input type="text" id="movieInput" placeholder="Enter a movie title">
+        <button id="searchButton" class="btn btn-primary">Search</button>
+        <div id="searchResults"></div>
+        <div id="recommendations"></div>
       </div>
     </section>
   </main>
 
+  <template id="movie-details-template">
+    <div class="movie-details">
+      <img src="" alt="" class="movie-poster">
+      <h3 class="movie-title"></h3>
+      <p><strong>Release Date:</strong> <span class="movie-release-date"></span></p>
+      <p><strong>Overview:</strong> <span class="movie-overview"></span></p>
+    </div>
+  </template>
+
+  <!-- <template id="recommendation-template">
+    <div class="recommendation">
+      <img src="" alt="" class="recommendation-poster">
+      <h3 class="recommendation-title"></h3>
+    </div>
+  </template> -->
+
+  <script src="model.js"></script>
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
 </html>
