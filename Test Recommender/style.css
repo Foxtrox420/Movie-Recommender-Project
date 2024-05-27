@@ -1,0 +1,61 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+    text-align: center;
+  }
+  
+  .container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  #movieInput {
+    width: 60%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  #searchButton {
+    padding: 10px 20px;
+    border: none;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  #searchButton:hover {
+    background-color: #0056b3;
+  }
+  
+  .movie-details, .recommendation {
+    display: inline-block;
+    vertical-align: top;
+    margin: 20px;
+    text-align: left;
+  }
+  
+  .movie-poster, .recommendation-poster {
+    width: 200px;
+    height: auto;
+    display: block;
+    margin: 0 auto 10px;
+  }
+  
+  .movie-title, .recommendation-title {
+    font-size: 18px;
+    margin: 10px 0;
+  }
+  
+  #recommendations {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+  
