@@ -12,7 +12,10 @@
   --gunmetal-1: hsl(229, 15%, 21%);
   --gunmetal-2: hsl(216, 22%, 18%);
   --gainsboro: hsl(0, 7%, 88%);
-  --citrine: hsl(57, 97%, 45%);
+  --citrine: #7DE2D1;
+  --dartgreenstrong: #339989;
+  --dartgrey : #2B2C28;
+  --dartgreystrong : #131515;
   --xiketic: hsl(253, 21%, 13%);
   --gray-x: hsl(0, 0%, 74%);
   --white: hsl(0, 100%, 100%);
@@ -64,6 +67,10 @@
  * #RESET
 \*-----------------------------------*/
 
+body{
+  overflow: auto;
+}
+
 *, *::before, *::after {
   margin: 0;
   padding: 0;
@@ -112,7 +119,9 @@ body.active { overflow: hidden; }
  * #REUSED STYLE
 \*-----------------------------------*/
 
-.container { padding-inline: 15px; }
+.container { 
+  padding-inline: 15px; 
+}
 
 /**
  * TITLES & SUBTITLES
@@ -142,6 +151,7 @@ body.active { overflow: hidden; }
 }
 
 .section-title { text-align: center; }
+
 
 /**
  * BADGE
@@ -369,14 +379,14 @@ body.active { overflow: hidden; }
   top: 0;
   left: 0;
   width: 100%;
+  translate: 0%;
   padding-block: 25px;
   transition: var(--transition-2);
   z-index: 4;
 }
 
 .header.active {
-  background: var(--eerie-black);
-  padding-block: 20px;
+  background: var(--dartgreystrong);
 }
 
 .header .container {
@@ -512,19 +522,26 @@ body.active { overflow: hidden; }
 
 
 /*-----------------------------------*\
- * #UPCOMING
+ * #TRENDING
 \*-----------------------------------*/
-
-.upcoming {
-  background: url("../images/upcoming-bg.png") no-repeat;
+.trending {
+  background-color: var(--dartgrey);
+  width: 100%;
   background-size: cover;
   background-position: center;
   padding-block: var(--section-padding);
 }
 
-.upcoming .flex-wrapper { margin-bottom: 50px; }
+.trending .flex-wrapper { margin-bottom: 50px; }
 
-.upcoming .section-title { margin-bottom: 30px; }
+.trending .section-subtitle{
+  text-align: left;
+}
+
+.trending .section-title { 
+  margin-bottom: 30px; 
+  text-align: left;
+}
 
 .filter-list {
   display: flex;
@@ -534,7 +551,7 @@ body.active { overflow: hidden; }
   gap: 10px;
 }
 
-.upcoming .filter-btn {
+.trending .filter-btn {
   color: var(--white);
   background: var(--raisin-black);
   font-size: var(--fs-11);
@@ -544,13 +561,66 @@ body.active { overflow: hidden; }
   border-radius: 50px;
 }
 
-.upcoming .filter-btn:focus { border-color: var(--citrine); }
+.trending .filter-btn:focus { border-color: var(--citrine); }
 
-.upcoming .movies-list > li {
+.trending .movies-list > li {
   min-width: 100%;
   scroll-snap-align: start;
 }
 
+.innercontainer{
+  width: 150%;
+  translate: -16.5%;
+}
+
+.carousel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.arrow {
+  background-color: var(--dartgreenstrong);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.arrow:hover {
+  background-color: var(--citrine);
+}
+
+.trending-movies {
+  display: flex;
+  overflow: hidden;
+  width: 80%;
+  padding: 20px 0;
+  scroll-behavior: smooth;
+  width: calc(100% - 100px);
+  margin: 0 50px;
+}
+
+.trending-movie {
+  display: inline-block;
+  text-align: center;
+  margin: 20px;
+  transition: transform 0.5s ease;
+}
+
+.trending-movie-poster {
+  width: 150px;
+  height: auto;
+  display: block;
+  margin: 0 auto 10px;
+}
+
+.trending-movie-title {
+  font-size: 16px;
+  margin: 10px 0;
+}
 
 
 
@@ -665,7 +735,6 @@ body.active { overflow: hidden; }
 \*-----------------------------------*/
 
 .top-rated {
-  background: url("../images/top-rated-bg.jpg") no-repeat;
   background-size: cover;
   background-position: center;
   padding-block: var(--section-padding);
@@ -719,7 +788,6 @@ body.active { overflow: hidden; }
 \*-----------------------------------*/
 
 .tv-series {
-  background: url("../images/tv-series-bg.jpg") no-repeat;
   background-size: cover;
   background-position: center;
   padding-block: var(--section-padding);
@@ -796,8 +864,11 @@ body.active { overflow: hidden; }
  * #FOOTER
 \*-----------------------------------*/
 
+.footer{
+  background-color: var(--dartgreystrong);
+}
+
 .footer-top {
-  background: url("../images/footer-bg.jpg") no-repeat;
   background-size: cover;
   background-position: center;
   padding-block: 80px 50px;
@@ -1096,7 +1167,9 @@ body.active { overflow: hidden; }
    * HERO
    */
 
-  .hero { min-height: unset; }
+  .hero { min-height: unset; 
+    
+  }
 
   .hero-content { margin-top: 20px; }
 
@@ -1175,6 +1248,10 @@ body.active { overflow: hidden; }
   /**
    * HEADER
    */
+
+  .header{
+    translate: -0.5%;
+  }
 
   .header .container { gap: 30px; }
 
@@ -2109,7 +2186,7 @@ body {
 }
 
 .btn-primary {
-  background-color: #007bff;
+  background-color: var(--dartgreenstrong);
   color: #fff;
 }
 
