@@ -91,10 +91,6 @@
     </div>
   </header>
 
-
-
-
-
   <main>
     <article>
 
@@ -127,12 +123,9 @@
 
       <section class="trending">
         <div class="container">
-
           <div class="flex-wrapper">
-
             <div class="title-wrapper">
               <p class="section-subtitle">Dart</p>
-
               <h2 class="h2 section-title">Trending Right Now</h2>
             </div>
 
@@ -150,63 +143,58 @@
                 <h3 class="trending-movie-title"></h3>
               </div>
             </template>
-
-    
-
           </div>
 
         </div>
       </section>
 
-
-      <section class="upcoming">
+      <section class="recent-release">
         <div class="container">
-
           <div class="flex-wrapper">
-
             <div class="title-wrapper">
               <p class="section-subtitle">Dart</p>
-
               <h2 class="h2 section-title">Recent Releases</h2>
             </div>
-
+            <div class="innercontainer">
+              <div class="carousel">
+                <button class="arrow left-arrow">&lt;</button>
+                <div id="recentReleases" class="trending-movies"></div>
+                <button class="arrow right-arrow">&gt;</button>
+              </div>
+            </div>
+            <template id="recent-release-template">
+              <div class="trending-movie">
+                <img src="" alt="" class="trending-movie-poster">
+                <h3 class="trending-movie-title"></h3>
+              </div>
+            </template>
           </div>
         </div>
       </section>
-
+      
       <!-- 
         - #TOP RATED
       -->
-
+      
       <section class="top-rated">
         <div class="container">
-
           <p class="section-subtitle">Dart</p>
-
           <h2 class="h2 section-title">Top Rated Movies</h2>
-
+          <div class="innercontainer">
+            <div class="carousel">
+              <button class="arrow left-arrow">&lt;</button>
+              <div id="topRatedMovies" class="trending-movies"></div>
+              <button class="arrow right-arrow">&gt;</button>
+            </div>
+          </div>
+          <template id="top-rated-template">
+            <div class="trending-movie">
+              <img src="" alt="" class="trending-movie-poster">
+              <h3 class="trending-movie-title"></h3>
+            </div>
+          </template>
         </div>
       </section>
-
-
-
-
-
-      <!-- 
-        - #TV SERIES
-      -->
-
-      <section class="tv-series">
-        <div class="container">
-
-          <p class="section-subtitle">Dart</p>
-
-          <h2 class="h2 section-title">World's Best TV Series</h2>
-        </div>
-      </section>
-
-
-
   <!-- 
     - #FOOTER
   -->
