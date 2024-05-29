@@ -1,9 +1,10 @@
 const API_KEY = 'f7a02d75c1d75b0a707ecd3277e64257';
+const COUNTRY_CODE = 'US'; // Replace with the desired country code
 
-// Function to fetch popular movies
+// Function to fetch popular movies for a specific country
 async function fetchPopularMovies() {
   try {
-    const response = await fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}`);
+    const response = await fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}&region=${COUNTRY_CODE}`);
     const data = await response.json();
     return data.results.slice(0, 10); // Return the top 10 popular movies
   } catch (error) {
@@ -12,13 +13,37 @@ async function fetchPopularMovies() {
   }
 }
 
-// Function to display popular movies
-function displayPopularMovies(movies) {
-  const trendingMoviesElement = document.getElementById("trendingMovies");
-  trendingMoviesElement.innerHTML = ""; // Clear previous content
+// Function to fetch recent releases
+async function fetchRecentReleases() {
+  try {
+    const response = await fetch(`https://api.themoviedb.org/3/movie/now_playing?api_key=${API_KEY}&region=${COUNTRY_CODE}`);
+    const data = await response.json();
+    return data.results.slice(0, 10); // Return the top 10 recent releases
+  } catch (error) {
+    console.error("Error fetching recent releases:", error);
+    return [];
+  }
+}
+
+// Function to fetch top-rated movies
+async function fetchTopRatedMovies() {
+  try {
+    const response = await fetch(`https://api.themoviedb.org/3/movie/top_rated?api_key=${API_KEY}&region=${COUNTRY_CODE}`);
+    const data = await response.json();
+    return data.results.slice(0, 10); // Return the top 10 top-rated movies
+  } catch (error) {
+    console.error("Error fetching top-rated movies:", error);
+    return [];
+  }
+}
+
+// General function to display movies
+function displayMovies(movies, containerId, templateId) {
+  const container = document.getElementById(containerId);
+  container.innerHTML = ""; // Clear previous content
 
   movies.forEach(movie => {
-    const template = document.getElementById("trending-movie-template").content.cloneNode(true);
+    const template = document.getElementById(templateId).content.cloneNode(true);
     const poster = template.querySelector(".trending-movie-poster");
     poster.src = movie.poster_path ? `https://image.tmdb.org/t/p/w200/${movie.poster_path}` : 'placeholder.jpg';
     poster.alt = movie.title;
@@ -29,28 +54,35 @@ function displayPopularMovies(movies) {
     });
 
     template.querySelector(".trending-movie-title").textContent = movie.title;
-    trendingMoviesElement.appendChild(template);
+    container.appendChild(template);
   });
 }
 
 // Function to handle carousel navigation
 function setupCarousel() {
-  const leftArrow = document.querySelector(".left-arrow");
-  const rightArrow = document.querySelector(".right-arrow");
-  const trendingMoviesElement = document.getElementById("trendingMovies");
-
-  leftArrow.addEventListener("click", () => {
-    trendingMoviesElement.scrollBy({ left: -200, behavior: 'smooth' });
+  document.querySelectorAll(".left-arrow").forEach(arrow => {
+    arrow.addEventListener("click", (e) => {
+      e.target.nextElementSibling.scrollBy({ left: -200, behavior: 'smooth' });
+    });
   });
 
-  rightArrow.addEventListener("click", () => {
-    trendingMoviesElement.scrollBy({ left: 200, behavior: 'smooth' });
+  document.querySelectorAll(".right-arrow").forEach(arrow => {
+    arrow.addEventListener("click", (e) => {
+      e.target.previousElementSibling.scrollBy({ left: 200, behavior: 'smooth' });
+    });
   });
 }
 
-// Fetch and display popular movies on page load
+// Fetch and display movies on page load
 document.addEventListener("DOMContentLoaded", async () => {
-  const popularMovies = await fetchPopularMovies();
-  displayPopularMovies(popularMovies);
+  const [popularMovies, recentReleases, topRatedMovies] = await Promise.all([
+    fetchPopularMovies(),
+    fetchRecentReleases(),
+    fetchTopRatedMovies()
+  ]);
+
+  displayMovies(popularMovies, "trendingMovies", "trending-movie-template");
+  displayMovies(recentReleases, "recentReleases", "recent-release-template");
+  displayMovies(topRatedMovies, "topRatedMovies", "top-rated-template");
   setupCarousel();
 });
