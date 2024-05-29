@@ -2,36 +2,173 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dart - Movie Details</title>
-  <link rel="stylesheet" href="/SE Project/Movie-Recommender-Project-main/Dart/assets/css/informatics.css">
-  <link rel="icon" type="image/x-icon" href="/SE Project/Movie-Recommender-Project-main/Dart/assets/images/compact logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="icon" type="image/x-icon" href="./assets/images/compact logo.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-  <div class="container">
-    <div id="movieDetails" class="movie-details">
-      <!-- Movie details will be populated here -->
+
+  <header class="header" data-header>
+    <div class="container">
+
+      <div class="overlay" data-overlay></div>
+
+      <a href="./index.html" class="logo">
+        <img src="./assets/images/dartlogo.png">
+      </a>
+
+      <div class="header-actions">
+
+        <a href="moviesearch.html" class="search-btn">
+          <ion-icon name="search-outline"></ion-icon>
+        </a>
+        <button class="btn btn-primary">Sign in</button>
+
+      </div>
+
+      <button class="menu-open-btn" data-menu-open-btn>
+        <ion-icon name="reorder-two"></ion-icon>
+      </button>
+
+      <nav class="navbar" data-navbar>
+
+        <div class="navbar-top">
+
+          <a href="./index.html" class="logo">
+            <img src="./assets/images/logo2.png" alt="Filmlane logo">
+          </a>
+
+          <button class="menu-close-btn" data-menu-close-btn>
+            <ion-icon name="close-outline"></ion-icon>
+          </button>
+
+        </div>
+
+        <ul class="navbar-list">
+
+          <li>
+            <a href="./index.html" class="navbar-link">Recommendation engine</a>
+          </li>
+
+          <li>
+            <a href="./community.html" class="navbar-link">Community</a>
+          </li>
+
+          <li>
+            <a href="./moviedatabase.html" class="navbar-link">Movie Database</a>
+          </li>
+
+        </ul>
+      </nav>
+
     </div>
+  </header>
+
+  <div class="container">
+    <div id="movieDetails" class="movie-details"></div>
+    <template id="movie-detail-template">
+      <div class="movie-detail">
+        <div class="background">
+          <div class="title-header">
+            <h2 class="movie-title"></h2>
+            <span class="fa fa-star checked"></span>
+            <span class="movie-rating"></span>
+          </div>
+          <div class="movie-header">
+            <img src="" alt="" class="movie-poster">
+            <div class="movie-trailer-container" style="display: none;">
+              <iframe class="movie-trailer" width="500px" height="300px" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <div class="details">
+              <p><strong>Release Date:</strong> <span class="movie-release-date"></span></p>     
+              <p><strong>Runtime:</strong> <span class="movie-runtime"></span></p>
+              <p><strong>Director:</strong> <span class="movie-director"></span></p>
+              <p><strong>Cast:</strong> <span class="movie-cast"></span></p>
+            </div>
+          </div>
+          <p><strong>Overview:</strong> <span class="movie-overview"></span></p>
+          <p><strong>Genres:</strong> <span class="movie-genres"></span></p>
+        </div>
+      </div>
+    </template>
   </div>
 
-  <template id="movie-detail-template">
-    <div class="movie-detail">
-      <img src="" alt="" class="movie-poster">
-      <h2 class="movie-title"></h2>
-      <p><strong>Release Date:</strong> <span class="movie-release-date"></span></p>
-      <p><strong>Overview:</strong> <span class="movie-overview"></span></p>
-      <p><strong>Genres:</strong> <span class="movie-genres"></span></p>
-      <p><strong>Runtime:</strong> <span class="movie-runtime"></span></p>
-      <p><strong>Rating:</strong> <span class="movie-rating"></span></p>
-      <p><strong>Director:</strong> <span class="movie-director"></span></p>
-      <p><strong>Cast:</strong> <span class="movie-cast"></span></p>
-      <div class="movie-trailer-container" style="display: none;">
-        <p><strong>Trailer:</strong></p>
-        <iframe class="movie-trailer" width="560" height="315" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+  <footer class="footer">
+
+    <div class="footer-top">
+      <div class="container">
+
+        <div class="footer-brand-wrapper">
+
+          <a href="./index.html" class="logo">
+            <img src="./assets/images/dartlogo.png" alt="Filmlane logo">
+          </a>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="quicklink-wrapper">
+
+          <ul class="social-list">
+
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-facebook"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-twitter"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-pinterest"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-linkedin"></ion-icon>
+              </a>
+            </li>
+
+          </ul>
+
+        </div>
+
       </div>
     </div>
-  </template>
 
-  <script src="/SE Project/Movie-Recommender-Project-main/Dart/assets/js/informatics.js"></script>
+
+
+    <div class="footer-bottom">
+      <div class="container">
+
+        <p class="copyright">
+          &copy; 2024 <a href="#">Dart</a>. All Rights Reserved
+        </p>
+      </div>
+      
+    </div>
+
+  </footer>
+
+  <a href="#top" class="go-top" data-go-top>
+    <ion-icon name="chevron-up"></ion-icon>
+  </a>
+
+  <script src="./assets/js/informatics.js"></script>
+  <script src="./assets/js/script.js"></script>
 </body>
 </html>
