@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In To Your Dart Account</title>
+    <link rel="stylesheet" href="/assets/css/signin.css">
+</head>
+<body>
+    <section>
+        <span></span>
+        <div class="signin">
+            <div class="content">
+                <h2>Login</h2>
+                <div class="form">
+                    <div class="inputBox">
+                        <input type="email" id="email" required>
+                        <i>Email</i>
+                    </div>
+                    <div class="inputBox">
+                        <input type="password" id="password" required>
+                        <i>Password</i>
+                    </div>
+                    <div class="inputBox">
+                        <input type="submit" value="Sign In" onclick="loginUser()">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        async function loginUser() {
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            try {
+                const response = await fetch('/api/login', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ email, password })
+                });
+
+                if (response.ok) {
+                    window.location.href = 'index.html';
+                } else {
+                    alert('Invalid email or password.');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('An error occurred. Please try again.');
+            }
+        }
+    </script>
+</body>
+</html>
