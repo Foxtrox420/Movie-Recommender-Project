@@ -492,7 +492,6 @@ body.active { overflow: hidden; }
 \*-----------------------------------*/
 
 .hero {
-  background: url("../images/banner.jpg") no-repeat;
   background-size: cover;
   background-position: center;
   min-height: 750px;
@@ -536,11 +535,12 @@ body.active { overflow: hidden; }
 
 .trending .section-subtitle{
   text-align: left;
+  transform: translate(-20%);
 }
 
 .trending .section-title { 
-  margin-bottom: 30px; 
   text-align: left;
+  transform: translate(-20%);
 }
 
 .filter-list {
@@ -727,7 +727,25 @@ body.active { overflow: hidden; }
 .service-card .card-title { margin-bottom: 10px; }
 
 
+/* Recent Release */
 
+.recent-release{
+  background-color: var(--dartgrey);
+}
+
+.recent-release .title-wrapper{
+  padding-top: 5%;
+}
+
+.recent-release .section-title{
+  text-align: left;
+  transform: translate(-20%);
+}
+
+.recent-release .section-subtitle{
+  text-align: left;
+  transform: translate(-20%);
+}
 
 
 /*-----------------------------------*\
@@ -778,25 +796,6 @@ body.active { overflow: hidden; }
 .top-rated .filter-btn:focus::before { left: 0; }
 
 .top-rated .filter-btn:focus::after { right: 0; }
-
-
-
-
-
-/*-----------------------------------*\
- * #TV SEREIS
-\*-----------------------------------*/
-
-.tv-series {
-  background-size: cover;
-  background-position: center;
-  padding-block: var(--section-padding);
-}
-
-.tv-series .section-title { margin-bottom: 50px; }
-
-
-
 
 
 /*-----------------------------------*\
@@ -1175,13 +1174,6 @@ body.active { overflow: hidden; }
 
 
 
-  /**
-   * UPCOMING
-   */
-
-  .upcoming .movies-list > li { min-width: calc(50% - 15px); }
-
-
 
   /**
    * SERVICE
@@ -1449,25 +1441,6 @@ body.active { overflow: hidden; }
     margin-top: 100px;
     max-width: 600px;
   }
-
-
-
-  /**
-   * UPCOMING
-   */
-
-  .upcoming .flex-wrapper {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .upcoming :is(.section-subtitle, .section-title) { text-align: left; }
-
-  .upcoming .section-title { margin-bottom: 0; }
-
-  .upcoming .movies-list > li { min-width: calc(33.33% - 20px); }
-
 
 
   /**
