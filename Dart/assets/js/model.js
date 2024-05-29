@@ -15,9 +15,18 @@ async function fetchSimilarMovies(movieId) {
 function displayRecommendations(recommendations) {
   const recommendationsElement = document.getElementById("recommendations");
   recommendationsElement.innerHTML = ""; // Clear previous recommendations
+
   recommendations.forEach(movie => {
     const template = document.getElementById("recommendation-template").content.cloneNode(true);
-    template.querySelector(".recommendation-poster").src = movie.poster_path ? `https://image.tmdb.org/t/p/w200/${movie.poster_path}` : 'placeholder.jpg';
+    const poster = template.querySelector(".recommendation-poster");
+    poster.src = movie.poster_path ? `https://image.tmdb.org/t/p/w200/${movie.poster_path}` : 'placeholder.jpg';
+    poster.alt = movie.title;
+
+    // Add click event listener to redirect to the informatics page with the movie ID
+    poster.addEventListener("click", () => {
+      window.location.href = `informatics.html?id=${movie.id}`;
+    });
+
     template.querySelector(".recommendation-title").textContent = movie.title;
     recommendationsElement.appendChild(template);
   });
@@ -46,7 +55,15 @@ function displayMovieDetails(movie) {
   searchResultsElement.innerHTML = ""; // Clear previous results
 
   const template = document.getElementById("movie-details-template").content.cloneNode(true);
-  template.querySelector(".movie-poster").src = movie.poster_path ? `https://image.tmdb.org/t/p/w200/${movie.poster_path}` : 'placeholder.jpg';
+  const poster = template.querySelector(".movie-poster");
+  poster.src = movie.poster_path ? `https://image.tmdb.org/t/p/w200/${movie.poster_path}` : 'placeholder.jpg';
+  poster.alt = movie.title;
+
+  // Add click event listener to redirect to the informatics page with the movie ID
+  poster.addEventListener("click", () => {
+    window.location.href = `informatics.html?id=${movie.id}`;
+  });
+
   template.querySelector(".movie-title").textContent = movie.title;
   template.querySelector(".movie-release-date").textContent = movie.release_date;
   template.querySelector(".movie-overview").textContent = movie.overview;
