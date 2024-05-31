@@ -72,35 +72,18 @@
       </nav>
     </div>
   </header>
-
   <!-- Main content -->
-  
-    <section class="search-section">
-        <h1>Movie Search</h1>
-        <input type="text" id="movieInput" placeholder="Enter a movie title" class="searchbar">
-        <button id="searchButton" class="btn btn-primary">Search</button>
-        <div id="searchResults"></div>
-        <div id="recommendations"></div>
-    </section>
-
-  <template id="movie-details-template">
-    <div class="movie-details">
-      <img src="" alt="" class="movie-poster">
-      <h3 class="movie-title"></h3>
-      <p><strong>Release Date:</strong> <span class="movie-release-date"></span></p>
-      <p><strong>Overview:</strong> <span class="movie-overview"></span></p>
-    </div>
-  </template>
-
-  <!-- <template id="recommendation-template">
-    <div class="recommendation">
-      <img src="" alt="" class="recommendation-poster">
-      <h3 class="recommendation-title"></h3>
-    </div>
-  </template> -->
+  <section class="empty">
+  </section>
+  <section class="search-section">
+    <h1><strong>Movie</strong> Search</h1>
+    <input type="text" id="movieInput" placeholder="Enter a movie title" class="searchbar">
+    <button id="searchButton" class="btn btn-primary">Search</button>
+    <div id="searchResults"></div>
+    <div id="recommendations"></div>
+  </section>
 
   <footer class="footer">
-
     <div class="footer-top">
       <div class="container">
 
@@ -114,35 +97,10 @@
         <div class="divider"></div>
 
         <div class="quicklink-wrapper">
-
-          <ul class="social-list">
-
-            <li>
-              <a href="#" class="social-link">
-                <ion-icon name="logo-facebook"></ion-icon>
-              </a>
-            </li>
-
-            <li>
-              <a href="#" class="social-link">
-                <ion-icon name="logo-twitter"></ion-icon>
-              </a>
-            </li>
-
-            <li>
-              <a href="#" class="social-link">
-                <ion-icon name="logo-pinterest"></ion-icon>
-              </a>
-            </li>
-
-            <li>
-              <a href="#" class="social-link">
-                <ion-icon name="logo-linkedin"></ion-icon>
-              </a>
-            </li>
-
-          </ul>
-
+          <a>
+            Dart is your one stop movie site that provides accurate and reliable movie database. 
+            Find your movies with dart now!
+          </a>
         </div>
 
       </div>
@@ -161,6 +119,7 @@
   </footer>
 
   <script src="./assets/js/model.js"></script> <!-- Might have to change this if using different folder-->
+  <script src="./assets/js/script.js"></script>
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </body>
