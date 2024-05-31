@@ -263,6 +263,10 @@ body.active { overflow: hidden; }
   z-index: 4;
 }
 
+.header-actions ion-icon:hover{
+  color: var(--citrine);
+}
+
 .header.active {
   background: var(--dartgreystrong);
 }
@@ -1052,15 +1056,7 @@ section{
 
   .search-btn ion-icon { --ionicon-stroke-width: 80px; }
 
-  .search-btn::after {
-    content: "";
-    position: absolute;
-    top: 1px;
-    right: -20px;
-    background: hsla(0, 0%, 100%, 0.1);
-    width: 2px;
-    height: 14px;
-  }
+
 
   .lang-wrapper {
     display: flex;
