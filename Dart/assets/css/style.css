@@ -383,7 +383,11 @@ body.active { overflow: hidden; }
   background-image: url(./cinema-background-csjrmkuhfvvumb2q.jpg);
 }
 
-.hero-content { margin-top: 60px; }
+.hero-content {
+   margin-top: 60px; 
+  text-shadow: 2px 2px 2px #000;
+  translate: 50% 25%;
+}
 
 .hero-subtitle {
   color: var(--citrine);
@@ -865,6 +869,7 @@ section{
   padding-top: 160px;
   padding-bottom: var(--section-padding);
   display: inline-block;
+  text-align: justify;
 }
 
 .checked{
@@ -877,6 +882,10 @@ section{
 
 .title-header {
   display: flex;
+}
+
+.title-header h2{
+  width: 80%;
 }
 
 .title-header span{
@@ -910,8 +919,12 @@ section{
   border-radius: 3%;
   padding: 20px;
   height: 300px;
+  background-color: var(--dartgrey);
 }
 
+.details h1{
+  font-size: 20px;
+}
 
 /*-----------------------------------*\
  * #MEDIA QUERIES
@@ -1431,7 +1444,6 @@ html{
 }
 
 a{
-  font-weight: bolder;
   text-decoration: none;
 }
 
@@ -2035,17 +2047,46 @@ header .container {
 }
 
 /* Search Bar */
-
+.empty{
+  background-size: cover;
+  background-position: center;
+  min-height: 190px;
+  height: 60%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-block: var(--section-padding);
+  
+}
 .search-section {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 200vh; 
+  height: 500vh; 
   background-size: cover;
+  margin-bottom: 50px;
+  background-image: url(wp10615928.jpg);
+}
+
+.search-section input{
+  box-shadow: 2px 2px 15px #000000;
+}
+
+.search-section h1{
+  font-size: 55px;
+  text-shadow: 2px 2px 7px #000000;
+}
+
+.search-section strong{
+  color: var(--citrine);
 }
 
 .searchbar{
-  width: 50px;
+  margin: 1%;
+  border-radius: 20px;
+  height: 10%;
+  width: 50%;
+  text-align: center;
 }
 
 .search-form {
