@@ -32,7 +32,7 @@ function displayRecommendations(recommendations) {
   });
 }
 
-document.getElementById("searchButton").addEventListener("click", async () => {
+async function handleSearch() {
   const inputTitle = document.getElementById("movieInput").value;
   if (inputTitle) {
     const movie = await fetchMovieDetails(inputTitle);
@@ -48,25 +48,23 @@ document.getElementById("searchButton").addEventListener("click", async () => {
     document.getElementById("searchResults").innerHTML = "Please enter a movie title";
     document.getElementById("recommendations").innerHTML = "";
   }
+}
+
+document.getElementById("searchButton").addEventListener("click", handleSearch);
+
+document.getElementById("movieInput").addEventListener("keydown", function(event) {
+  if (event.key === "Enter") {
+    handleSearch();
+  }
 });
 
 function displayMovieDetails(movie) {
-  const searchResultsElement = document.getElementById("searchResults");
-  searchResultsElement.innerHTML = ""; // Clear previous results
-
-  const template = document.getElementById("movie-details-template").content.cloneNode(true);
-  const poster = template.querySelector(".movie-poster");
-  poster.src = movie.poster_path ? `https://image.tmdb.org/t/p/w200/${movie.poster_path}` : 'placeholder.jpg';
-  poster.alt = movie.title;
-
-  // Add click event listener to redirect to the informatics page with the movie ID
-  poster.addEventListener("click", () => {
+  // searchResultsElement.appendChild(template);
+  const inputTitle = document.getElementById("movieInput").value;
+  if (inputTitle) {
     window.location.href = `informatics.html?id=${movie.id}`;
-  });
-
-  template.querySelector(".movie-title").textContent = movie.title;
-  template.querySelector(".movie-release-date").textContent = movie.release_date;
-  template.querySelector(".movie-overview").textContent = movie.overview;
-
-  searchResultsElement.appendChild(template);
+  } else {
+    document.getElementById("searchResults").innerHTML = "Please enter a movie title";
+    document.getElementById("recommendations").innerHTML = "";
+  }
 }
