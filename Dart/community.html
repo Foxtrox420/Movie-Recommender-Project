@@ -7,686 +7,134 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dart - Movie Recommendation</title>
 
-  <!-- 
-    - favicon
-  -->
   <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
-
-  <!-- 
-    - custom css link
-  -->
   <link rel="stylesheet" href="./assets/css/style.css">
-
-  <!-- 
-    - google font link
-  -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <!-- 
-    small icon template
-   -->
   <link rel="icon" type="image/x-icon" href="./assets/images/compact logo.png">
 </head>
 
 <body id="top">
 
-  <!-- 
-    - #HEADER
-  -->
-
   <header class="header" data-header>
     <div class="container">
-
       <div class="overlay" data-overlay></div>
-
       <a href="./index.html" class="logo">
         <img src="./assets/images/logo2.png" alt="Filmlane logo">
       </a>
-
       <div class="header-actions">
-
         <a href="moviesearch.html" class="search-btn">
           <ion-icon name="search-outline"></ion-icon>
-        </a>        
+        </a>
         <button class="btn btn-primary">Sign in</button>
-
       </div>
-
       <button class="menu-open-btn" data-menu-open-btn>
         <ion-icon name="reorder-two"></ion-icon>
       </button>
-
       <nav class="navbar" data-navbar>
-
         <div class="navbar-top">
-
           <a href="./index.html" class="logo">
             <img src="./assets/images/dartlogo.png">
           </a>
-
           <button class="menu-close-btn" data-menu-close-btn>
             <ion-icon name="close-outline"></ion-icon>
           </button>
-
         </div>
-
         <ul class="navbar-list">
-
-          <li>
-            <a href="./index.html" class="navbar-link">Recommendation engine</a>
-          </li>
-
-          <li>
-            <a href="./community.html" class="navbar-link">Community</a>
-          </li>
-
-          <li>
-            <a href="./moviedatabase.html" class="navbar-link">Movie Database</a>
-          </li>
-
+          <li><a href="./index.html" class="navbar-link">Recommendation engine</a></li>
+          <li><a href="./community.html" class="navbar-link">Community</a></li>
+          <li><a href="./moviedatabase.html" class="navbar-link">Movie Database</a></li>
         </ul>
-
         <ul class="navbar-social-list">
-
-          <li>
-            <a href="#" class="navbar-social-link">
-              <ion-icon name="logo-twitter"></ion-icon>
-            </a>
-          </li>
-
-          <li>
-            <a href="#" class="navbar-social-link">
-              <ion-icon name="logo-facebook"></ion-icon>
-            </a>
-          </li>
-
-          <li>
-            <a href="#" class="navbar-social-link">
-              <ion-icon name="logo-pinterest"></ion-icon>
-            </a>
-          </li>
-
-          <li>
-            <a href="#" class="navbar-social-link">
-              <ion-icon name="logo-instagram"></ion-icon>
-            </a>
-          </li>
-
-          <li>
-            <a href="#" class="navbar-social-link">
-              <ion-icon name="logo-youtube"></ion-icon>
-            </a>
-          </li>
-
+          <li><a href="#" class="navbar-social-link"><ion-icon name="logo-twitter"></ion-icon></a></li>
+          <li><a href="#" class="navbar-social-link"><ion-icon name="logo-facebook"></ion-icon></a></li>
+          <li><a href="#" class="navbar-social-link"><ion-icon name="logo-pinterest"></ion-icon></a></li>
+          <li><a href="#" class="navbar-social-link"><ion-icon name="logo-instagram"></ion-icon></a></li>
+          <li><a href="#" class="navbar-social-link"><ion-icon name="logo-youtube"></ion-icon></a></li>
         </ul>
-
       </nav>
-
     </div>
   </header>
-  
-  
-    <article>
+  <div class="empty">
+    <div class="hero-content">
+      <h1 class="h1 hero-title">
+       Community Forum
+      </h1>
+      <p>Comment on your favorite movies</p>
+    </div>
+  </div>
 
-      <!-- 
-        - #HERO
-      -->
-
-      <section class="hero">
-        <div class="container">
-
-          <div class="hero-content">
-
-            <h1 class="h1 hero-title">
-                <strong>Movie</strong> Database
-            </h1>
-
-            <div class="meta-wrapper">
-            <button class="btn btn-primary">
-              <ion-icon name="play"></ion-icon>
-              <span>Learn More Below</span>
-            </button>
-          </div>
+    <!-- Comment Section -->
+    <div class="comment-tab">
+      <h1>Post a new forum</h1>
+      <div class="comment-form">
+        <input type="text" id="username" class="comment-input" placeholder="Your name" required>
+        <textarea id="comment-text" class="comment-input" placeholder="Your comment" required></textarea>
+        <button id="post-comment" class="comment-button">Post Comment</button>
+      </div>
+    </div>
+    <div class="forum-posts">
+    <section class="comments-section">
+        <div id="comments-container"></div>
+    </section>
+    <template id="comment-template">
+      <div class="comment">
+        <div class="comment-user-icon">
+          <ion-icon name="person-circle-outline"></ion-icon>
         </div>
-      </section>
-
-      <!-- 
-        - #Movie Database
-      -->
-
-      <!-- <section class="top-rated">
-        <div class="container">
-
-          <p class="section-subtitle">Dart</p>
-
-          <h2 class="h2 section-title">Community Forum</h2>
-
-          <div class="forum-post">
-            <div class="post-header">
-              <div class="user-info">
-                <img src="./assets/images/dp1.jpeg" alt="User profile picture" class="user-profile">
-                <div>
-                  <h3 class="user-name">Jane Doe</h3>
-                  <span class="post-date">May 24, 2024</span>
-                </div>
-              </div>
-            </div>
-            <div class="post-content">
-              <p>What are your thoughts on the latest superhero movie? I felt it had great action scenes but the plot was a bit lacking.</p>
-            </div>
-            <div class="post-footer">
-              <button class="btn btn-secondary">Reply</button>
+        <div class="comment-body">
+          <div class="comment-header">
+            <span class="comment-username"></span>
+            <div class="comment-votes">
+              <ion-icon name="arrow-up-outline"></ion-icon>
+              <span class="vote-count">0</span>
+              <ion-icon name="arrow-down-outline"></ion-icon>
             </div>
           </div>
-  
-          <div class="forum-post">
-            <div class="post-header">
-              <div class="user-info">
-                <img src="./assets/images/dp2.jpg" alt="User profile picture" class="user-profile">
-                <div>
-                  <h3 class="user-name">John Smith</h3>
-                  <span class="post-date">May 24, 2024</span>
-                </div>
-              </div>
-            </div>
-            <div class="post-content">
-              <p>Does anyone have any recommendations for a good thriller movie? I'm looking for something with lots of twists and turns.</p>
-            </div>
-            <div class="post-footer">
-              <button class="btn btn-secondary">Reply</button>
-            </div>
-          </div>
-  
-          <div class="forum-post">
-            <div class="post-header">
-  
-              <div class="user-info">
-                <img src="./assets/images/dp3.jpg" alt="User profile picture" class="user-profile">
-                <div>
-                  <h3 class="user-name">Timothy Ronald</h3>
-                  <span class="post-date">May 23, 2024</span>
-                </div>
-              </div>
-            </div>
-            <div class="post-content">
-              <p>mclaren lu warna apa bos</p>
-            </div>
-            <div class="post-footer">
-              <button class="btn btn-secondary">Reply</button>
-            </div>
-          </div>
-          
-          <div class="forum-post">
-            <div class="post-header">
-  
-              <div class="user-info">
-                <img src="./assets/images/dp3.jpg" alt="User profile picture" class="user-profile">
-                <div>
-                  <h3 class="user-name">Timothy Ronald</h3>
-                  <span class="post-date">May 23, 2024</span>
-                </div>
-              </div>
-            </div>
-            <div class="post-content">
-              <p>mclaren lu warna apa bos</p>
-            </div>
-            <div class="post-footer">
-              <button class="btn btn-secondary">Reply</button>
-            </div>
-          </div>
+          <div class="comment-text"></div>
+          <button class="reply-button">Reply</button>
+        </div>
+      </div>
+    </template>
+    </div>
 
-          <div class="forum-post">
-            <div class="post-header">
-  
-              <div class="user-info">
-                <img src="./assets/images/dp3.jpg" alt="User profile picture" class="user-profile">
-                <div>
-                  <h3 class="user-name">Timothy Ronald</h3>
-                  <span class="post-date">May 23, 2024</span>
-                </div>
-              </div>
-            </div>
-            <div class="post-content">
-              <p>mclaren lu warna apa bos</p>
-            </div>
-            <div class="post-footer">
-              <button class="btn btn-secondary">Reply</button>
-            </div>
-          </div>
-
-          <div class="forum-post">
-            <div class="post-header">
-  
-              <div class="user-info">
-                <img src="./assets/images/dp3.jpg" alt="User profile picture" class="user-profile">
-                <div>
-                  <h3 class="user-name">Timothy Ronald</h3>
-                  <span class="post-date">May 23, 2024</span>
-                </div>
-              </div>
-            </div>
-            <div class="post-content">
-              <p>mclaren lu warna apa bos</p>
-            </div>
-            <div class="post-footer">
-              <button class="btn btn-secondary">Reply</button>
-            </div>
-          </div>
-
-          <div class="forum-post">
-            <div class="post-header">
-  
-              <div class="user-info">
-                <img src="./assets/images/dp3.jpg" alt="User profile picture" class="user-profile">
-                <div>
-                  <h3 class="user-name">Timothy Ronald</h3>
-                  <span class="post-date">May 23, 2024</span>
-                </div>
-              </div>
-            </div>
-            <div class="post-content">
-              <p>mclaren lu warna apa bos</p>
-            </div>
-            <div class="post-footer">
-              <button class="btn btn-secondary">Reply</button>
-            </div>
-          </div>
-
-          <div class="forum-post">
-            <div class="post-header">
-  
-              <div class="user-info">
-                <img src="./assets/images/dp3.jpg" alt="User profile picture" class="user-profile">
-                <div>
-                  <h3 class="user-name">Timothy Ronald</h3>
-                  <span class="post-date">May 23, 2024</span>
-                </div>
-              </div>
-            </div>
-            <div class="post-content">
-              <p>mclaren lu warna apa bos</p>
-            </div>
-            <div class="post-footer">
-              <button class="btn btn-secondary">Reply</button>
-            </div>
-          </div>
-
-          <div class="forum-post">
-            <div class="post-header">
-  
-              <div class="user-info">
-                <img src="./assets/images/dp3.jpg" alt="User profile picture" class="user-profile">
-                <div>
-                  <h3 class="user-name">Timothy Ronald</h3>
-                  <span class="post-date">May 23, 2024</span>
-                </div>
-              </div>
-            </div>
-            <div class="post-content">
-              <p>mclaren lu warna apa bos</p>
-            </div>
-            <div class="post-footer">
-              <button class="btn btn-secondary">Reply</button>
-            </div>
-          </div>
-
-          <div class="forum-post">
-            <div class="post-header">
-  
-              <div class="user-info">
-                <img src="./assets/images/dp3.jpg" alt="User profile picture" class="user-profile">
-                <div>
-                  <h3 class="user-name">Timothy Ronald</h3>
-                  <span class="post-date">May 23, 2024</span>
-                </div>
-              </div>
-            </div>
-            <div class="post-content">
-              <p>mclaren lu warna apa bos</p>
-            </div>
-            <div class="post-footer">
-              <button class="btn btn-secondary">Reply</button>
-            </div>
-          </div>
-
-          <div class="forum-post">
-            <div class="post-header">
-  
-              <div class="user-info">
-                <img src="./assets/images/dp3.jpg" alt="User profile picture" class="user-profile">
-                <div>
-                  <h3 class="user-name">Timothy Ronald</h3>
-                  <span class="post-date">May 23, 2024</span>
-                </div>
-              </div>
-            </div>
-            <div class="post-content">
-              <p>mclaren lu warna apa bos</p>
-            </div>
-            <div class="post-footer">
-              <button class="btn btn-secondary">Reply</button>
-            </div>
-          </div>
-
-          <div class="forum-post">
-            <div class="post-header">
-  
-              <div class="user-info">
-                <img src="./assets/images/dp3.jpg" alt="User profile picture" class="user-profile">
-                <div>
-                  <h3 class="user-name">Timothy Ronald</h3>
-                  <span class="post-date">May 23, 2024</span>
-                </div>
-              </div>
-            </div>
-            <div class="post-content">
-              <p>mclaren lu warna apa bos</p>
-            </div>
-            <div class="post-footer">
-              <button class="btn btn-secondary">Reply</button>
-            </div>
-          </div>
-
-          <div class="forum-post">
-            <div class="post-header">
-  
-              <div class="user-info">
-                <img src="./assets/images/dp3.jpg" alt="User profile picture" class="user-profile">
-                <div>
-                  <h3 class="user-name">Timothy Ronald</h3>
-                  <span class="post-date">May 23, 2024</span>
-                </div>
-              </div>
-            </div>
-            <div class="post-content">
-              <p>mclaren lu warna apa bos</p>
-            </div>
-            <div class="post-footer">
-              <button class="btn btn-secondary">Reply</button>
-            </div>
-          </div>
-
-          <div class="forum-post">
-            <div class="post-header">
-  
-              <div class="user-info">
-                <img src="./assets/images/dp3.jpg" alt="User profile picture" class="user-profile">
-                <div>
-                  <h3 class="user-name">Timothy Ronald</h3>
-                  <span class="post-date">May 23, 2024</span>
-                </div>
-              </div>
-            </div>
-            <div class="post-content">
-              <p>mclaren lu warna apa bos</p>
-            </div>
-            <div class="post-footer">
-              <button class="btn btn-secondary">Reply</button>
-            </div>
-          </div>
-
-          <div class="forum-post">
-            <div class="post-header">
-  
-              <div class="user-info">
-                <img src="./assets/images/dp3.jpg" alt="User profile picture" class="user-profile">
-                <div>
-                  <h3 class="user-name">Timothy Ronald</h3>
-                  <span class="post-date">May 23, 2024</span>
-                </div>
-              </div>
-            </div>
-            <div class="post-content">
-              <p>mclaren lu warna apa bos</p>
-            </div>
-            <div class="post-footer">
-              <button class="btn btn-secondary">Reply</button>
-            </div>
-          </div>
-
-          <div class="forum-post">
-            <div class="post-header">
-  
-              <div class="user-info">
-                <img src="./assets/images/dp3.jpg" alt="User profile picture" class="user-profile">
-                <div>
-                  <h3 class="user-name">Timothy Ronald</h3>
-                  <span class="post-date">May 23, 2024</span>
-                </div>
-              </div>
-            </div>
-            <div class="post-content">
-              <p>mclaren lu warna apa bos</p>
-            </div>
-            <div class="post-footer">
-              <button class="btn btn-secondary">Reply</button>
-            </div>
-          </div>
-
-          <div class="forum-post">
-            <div class="post-header">
-  
-              <div class="user-info">
-                <img src="./assets/images/dp3.jpg" alt="User profile picture" class="user-profile">
-                <div>
-                  <h3 class="user-name">Timothy Ronald</h3>
-                  <span class="post-date">May 23, 2024</span>
-                </div>
-              </div>
-            </div>
-            <div class="post-content">
-              <p>mclaren lu warna apa bos</p>
-            </div>
-            <div class="post-footer">
-              <button class="btn btn-secondary">Reply</button>
-            </div>
-          </div>
-
-          <div class="forum-post">
-            <div class="post-header">
-  
-              <div class="user-info">
-                <img src="./assets/images/dp3.jpg" alt="User profile picture" class="user-profile">
-                <div>
-                  <h3 class="user-name">Timothy Ronald</h3>
-                  <span class="post-date">May 23, 2024</span>
-                </div>
-              </div>
-            </div>
-            <div class="post-content">
-              <p>mclaren lu warna apa bos</p>
-            </div>
-            <div class="post-footer">
-              <button class="btn btn-secondary">Reply</button>
-            </div>
-          </div>
-
-          <div class="forum-post">
-            <div class="post-header">
-  
-              <div class="user-info">
-                <img src="./assets/images/dp3.jpg" alt="User profile picture" class="user-profile">
-                <div>
-                  <h3 class="user-name">Timothy Ronald</h3>
-                  <span class="post-date">May 23, 2024</span>
-                </div>
-              </div>
-            </div>
-            <div class="post-content">
-              <p>mclaren lu warna apa bos</p>
-            </div>
-            <div class="post-footer">
-              <button class="btn btn-secondary">Reply</button>
-            </div>
-          </div>
-
-          <div class="forum-post">
-            <div class="post-header">
-  
-              <div class="user-info">
-                <img src="./assets/images/dp3.jpg" alt="User profile picture" class="user-profile">
-                <div>
-                  <h3 class="user-name">Timothy Ronald</h3>
-                  <span class="post-date">May 23, 2024</span>
-                </div>
-              </div>
-            </div>
-            <div class="post-content">
-              <p>mclaren lu warna apa bos</p>
-            </div>
-            <div class="post-footer">
-              <button class="btn btn-secondary">Reply</button>
-            </div>
-          </div>
-
-          <div class="forum-post">
-            <div class="post-header">
-  
-              <div class="user-info">
-                <img src="./assets/images/dp3.jpg" alt="User profile picture" class="user-profile">
-                <div>
-                  <h3 class="user-name">Timothy Ronald</h3>
-                  <span class="post-date">May 23, 2024</span>
-                </div>
-              </div>
-            </div>
-            <div class="post-content">
-              <p>mclaren lu warna apa bos</p>
-            </div>
-            <div class="post-footer">
-              <button class="btn btn-secondary">Reply</button>
-            </div>
-          </div>
-
-          <div class="forum-post">
-            <div class="post-header">
-  
-              <div class="user-info">
-                <img src="./assets/images/dp3.jpg" alt="User profile picture" class="user-profile">
-                <div>
-                  <h3 class="user-name">Timothy Ronald</h3>
-                  <span class="post-date">May 23, 2024</span>
-                </div>
-              </div>
-            </div>
-            <div class="post-content">
-              <p>mclaren lu warna apa bos</p>
-            </div>
-            <div class="post-footer">
-              <button class="btn btn-secondary">Reply</button>
-            </div>
-          </div>
-
-          <div class="forum-post">
-            <div class="post-header">
-  
-              <div class="user-info">
-                <img src="./assets/images/dp3.jpg" alt="User profile picture" class="user-profile">
-                <div>
-                  <h3 class="user-name">Timothy Ronald</h3>
-                  <span class="post-date">May 23, 2024</span>
-                </div>
-              </div>
-            </div>
-            <div class="post-content">
-              <p>mclaren lu warna apa bos</p>
-            </div>
-            <div class="post-footer">
-              <button class="btn btn-secondary">Reply</button>
-            </div>
-          </div>
-
-          <div class="forum-post">
-            <div class="post-header">
-  
-              <div class="user-info">
-                <img src="./assets/images/dp3.jpg" alt="User profile picture" class="user-profile">
-                <div>
-                  <h3 class="user-name">Timothy Ronald</h3>
-                  <span class="post-date">May 23, 2024</span>
-                </div>
-              </div>
-            </div>
-            <div class="post-content">
-              <p>mclaren lu warna apa bos</p>
-            </div>
-            <div class="post-footer">
-              <button class="btn btn-secondary">Reply</button>
-            </div>
-          </div>
-
-          
-        </div> -->
-      </section>
-  <!-- 
-    - #FOOTER
-  -->
 
   <footer class="footer">
-
     <div class="footer-top">
       <div class="container">
-
         <div class="footer-brand-wrapper">
-
           <a href="./index.html" class="logo">
             <img src="./assets/images/logo2.png" alt="Filmlane logo">
           </a>
-
-
         </div>
-
         <div class="divider"></div>
-
         <div class="quicklink-wrapper">
-          <a>
-            Dart is your one stop movie site that provides accurate and reliable movie database. 
-            Find your movies with dart now!
-          </a>
+            <a>
+              Dart is your one stop movie site that provides accurate and reliable movie database. 
+              Find your movies with dart now!
+            </a>
         </div>
-
       </div>
     </div>
 
     <div class="footer-bottom">
       <div class="container">
-
         <p class="copyright">
           &copy; 2024 <a href="#">Dart</a>. All Rights Reserved
         </p>
       </div>
     </div>
-
   </footer>
-
-
-
-
-
-  <!-- 
-    - #GO TO TOP
-  -->
 
   <a href="#top" class="go-top" data-go-top>
     <ion-icon name="chevron-up"></ion-icon>
   </a>
 
 
-
-
-
-  <!-- 
-    - custom js link
-  -->
   <script src="./assets/js/script.js"></script>
-
-  <!-- 
-    - ionicon link
-  -->
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-
 </body>
 
 </html>
