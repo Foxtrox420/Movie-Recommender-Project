@@ -5,4 +5,4 @@
 
 ## Domain
 Link to our website is down below (Note this is unfinished product, expect bugs): 
-https://dart-movie.web.app
+[https://dart-movie.web.app](https://dart-recommender.web.app/)
