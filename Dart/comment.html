@@ -5,29 +5,29 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Comment Detail - Dart</title>
-
+  <title>Dart - Comment Detail</title>
   <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="./assets/css/style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="icon" type="image/x-icon" href="./assets/images/compact logo.png">
+  <link rel="icon" type="image/x-icon" href="./assets/images/compactlogo.png">
 </head>
 
 <body id="top">
-
   <header class="header" data-header>
     <div class="container">
       <div class="overlay" data-overlay></div>
       <a href="./index.html" class="logo">
-        <img src="./assets/images/logo2.png" alt="Filmlane logo">
+        <img src="./assets/images/dartlogo.png" alt="Dart Logo">
       </a>
       <div class="header-actions">
         <a href="moviesearch.html" class="search-btn">
           <ion-icon name="search-outline"></ion-icon>
         </a>
-        <button class="btn btn-primary">Sign in</button>
+        <a href="./sign-in-system/signin.html">
+          <button class="btn btn-primary">Sign in</button>
+        </a>
       </div>
       <button class="menu-open-btn" data-menu-open-btn>
         <ion-icon name="reorder-two"></ion-icon>
@@ -56,73 +56,68 @@
       </nav>
     </div>
   </header>
-  
-  <article>
-    <div class="empty">
-        <div class="hero-content">
-          <h1 class="h1 hero-title">
-          Comment Details
-          </h1>
+  <div class="empty">
+    <div class="hero-content">
+      <h1 class="h1 hero-title">
+        Comment Details
+      </h1>
+    </div>
+  </div>
+  <template id="comment-detail-template">
+    <div class="comment">
+        <div class="comment-user-icon">
+          <ion-icon name="person-circle-outline"></ion-icon>
         </div>
+        <div class="comment-body">
+          <div class="comment-header">
+            <span class="comment-username"></span>
+            <div class="comment-votes">
+                <ion-icon name="arrow-up-outline"></ion-icon>
+                <span class="vote-count">0</span>
+                <ion-icon name="arrow-down-outline"></ion-icon>
+            </div>
+          </div>
+        <div class="comment-text"></div>
       </div>
-
-
-    <!-- Comment Detail Section -->
-    <template id="comment-detail-template">
-        <div class="comment">
-            <div class="comment-user-icon">
-                <ion-icon name="person-circle-outline"></ion-icon>
-            </div>
-            <div class="comment-body">
-                <div class="comment-header">
-                    <span class="comment-username"></span>
-                    <div class="comment-votes">
-                        <ion-icon name="arrow-up-outline"></ion-icon>
-                        <span class="vote-count">0</span>
-                        <ion-icon name="arrow-down-outline"></ion-icon>
-                    </div>
-                </div>
-                <div class="comment-text"></div>
-            </div>
-        </div>
-    </template>
+    </div>
+  </template>
     
-    <template id="reply-template">
-        <div class="reply">
-            <div class="comment-user-icon">
-                <ion-icon name="person-circle-outline"></ion-icon>
-            </div>
-            <div class="comment-body">
-                <div class="comment-header">
-                    <span class="comment-username"></span>
-                    <div class="comment-votes">
-                        <ion-icon name="arrow-up-outline"></ion-icon>
-                        <span class="vote-count">0</span>
-                        <ion-icon name="arrow-down-outline"></ion-icon>
-                    </div>
-                </div>
-                <div class="comment-text"></div>
-            </div>
-        </div>
-    </template>
+  <template id="reply-template">
+      <div class="reply">
+          <div class="comment-user-icon">
+            <ion-icon name="person-circle-outline"></ion-icon>
+          </div>
+          <div class="comment-body">
+              <div class="comment-header">
+                  <span class="comment-username"></span>
+                  <div class="comment-votes">
+                      <ion-icon name="arrow-up-outline"></ion-icon>
+                      <span class="vote-count">0</span>
+                      <ion-icon name="arrow-down-outline"></ion-icon>
+                  </div>
+              </div>
+              <div class="comment-text"></div>
+          </div>
+       </div>
+  </template>
 
-    <section class="comments-section">
-        <div id="comment-detail-container"></div>
-        <div class="comment-tab">
-            <div class="comment-form">
-                <input type="text" id="reply-username" class="comment-input" placeholder="Your name" required>
-                <textarea id="reply-text" class="comment-input" placeholder="Your reply" required></textarea>
-                <button id="post-reply" class="comment-button">Post Reply</button>
-            </div>
-        </div>
-    </section>
+  <section class="comments-section">
+      <div id="comment-detail-container"></div>
+      <div class="comment-tab">
+          <div class="comment-form">
+              <input type="text" id="reply-username" class="comment-input" placeholder="Your name" required>
+              <textarea id="reply-text" class="comment-input" placeholder="Your reply" required></textarea>
+              <button id="post-reply" class="comment-button">Post Reply</button>
+          </div>
+      </div>
+  </section>
     
-    <footer class="footer">
-        <div class="footer-top">
-            <div class="container">
-                <div class="footer-brand-wrapper">
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="footer-brand-wrapper">
           <a href="./index.html" class="logo">
-            <img src="./assets/images/logo2.png" alt="Filmlane logo">
+            <img src="./assets/images/dartlogo.png" alt="Dart logo">
           </a>
         </div>
         <div class="divider"></div>
@@ -134,7 +129,6 @@
         </div>
       </div>
     </div>
-
     <div class="footer-bottom">
       <div class="container">
         <p class="copyright">
@@ -143,11 +137,9 @@
       </div>
     </div>
   </footer>
-
   <script src="./assets/js/forum.js"></script>
   <script src="./assets/js/script.js"></script>
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </body>
 
 </html>
