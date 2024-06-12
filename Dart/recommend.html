@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dart - Recommender Engine</title>
+  <link rel="stylesheet" href="./assets/css/recommendation.css">
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+  <link rel="icon" type="image/x-icon" href="./assets/images/compactlogo.png">
+</head>
+
+<body id="top">
+  <header class="header" data-header>
+    <div class="container">
+      <div class="overlay" data-overlay></div>
+      <a href="./index.html" class="logo">
+        <img src="./assets/images/dartlogo.png">
+      </a>
+      <div class="header-actions">
+        <a href="moviesearch.html" class="search-btn">
+          <ion-icon name="search-outline"></ion-icon>
+        </a>
+        <a href="./sign-in-system/signin.html">
+          <button class="btn btn-primary">Sign in</button>
+        </a>
+      </div>
+      <button class="menu-open-btn" data-menu-open-btn>
+        <ion-icon name="reorder-two"></ion-icon>
+      </button>
+      <nav class="navbar" data-navbar>
+        <div class="navbar-top">
+          <a href="./index.html" class="logo">
+            <img src="./assets/images/dartlogo.png" alt="Dart logo">
+          </a>
+          <button class="menu-close-btn" data-menu-close-btn>
+            <ion-icon name="close-outline"></ion-icon>
+          </button>
+        </div>
+        <ul class="navbar-list">
+          <li>
+            <a href="./recommend.html" class="navbar-link">Recommendation engine</a>
+          </li>
+          <li>
+            <a href="./community.html" class="navbar-link">Community</a>
+          </li>
+          <li>
+            <a href="./moviedatabase.html" class="navbar-link">Movie Database</a>
+          </li>
+        </ul>
+      </nav>
+    </div>   
+  </header>
+  <section class="empty"></section>
+  <section class="quiz-section">
+    <h1><strong>Movie</strong> Recommendation</h1>
+    <form id="quizForm">
+      <label for="genreSelect">Preferred Genre:</label>
+      <select id="genreSelect" class="filter-select"></select>
+      <label for="yearSelect">Preferred Year of Release:</label>
+      <select id="yearSelect" class="filter-select">
+        <option value="2010">Movies > 2010</option>
+        <option value="2000-2010">Movies > 2000 and < 2010</option>
+        <option value="1999">Movies < 2000</option>
+      </select>
+      <label for="ratingInput">Minimum Rating:</label>
+      <input type="number" id="ratingInput" min="1" max="9" step="0.1" placeholder="Enter minimum rating"
+        class="filter-input">
+      <button type="submit" class="button">Recommend me</button>
+    </form>
+  </section>
+  <div id="recommendations" class="recommendations-container"></div>
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="footer-brand-wrapper">
+          <a href="./index.html" class="logo">
+            <img src="./assets/images/dartlogo.png" alt="Dart logo">
+          </a>
+        </div>
+        <div class="divider"></div>
+        <div class="quicklink-wrapper">
+          <a>
+            Dart is your one stop movie site that provides accurate and reliable movie database. 
+            Find your movies with dart now!
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+
+        <p class="copyright">
+          &copy; 2024 <a href="#">Dart</a>. All Rights Reserved
+        </p>
+      </div>
+    </div>
+  </footer>
+  
+  <script src="./assets/js/recommend.js"></script>
+  <script src="./assets/js/script.js"></script>
+  <script type="module"src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+</body>
+
+</html>
