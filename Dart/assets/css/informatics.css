@@ -1,54 +1,133 @@
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f0f0f0;
-  color: #333;
-  text-align: center;
-  margin: 0;
+:root {
+  --rich-black-fogra-29: hsl(225, 25%, 9%);
+  --rich-black-fogra-39: hsl(170, 21%, 5%);
+  --raisin-black: hsl(228, 13%, 15%);
+  --eerie-black: hsl(207, 19%, 11%);
+  --light-gray: hsl(0, 3%, 80%);
+  --gunmetal-1: hsl(229, 15%, 21%);
+  --gunmetal-2: hsl(216, 22%, 18%);
+  --gainsboro: hsl(0, 7%, 88%);
+  --citrine: #7DE2D1;
+  --dartgreenstrong: #339989;
+  --dartgrey : #2B2C28;
+  --dartgreystrong : #131515;
+  --xiketic: hsl(253, 21%, 13%);
+  --gray-x: hsl(0, 0%, 74%);
+  --white: hsl(0, 100%, 100%);
+  --black: hsl(0, 0%, 0%);
+  --jet: hsl(0, 0%, 20%);
+
+  --ff-poppins: 'Poppins', sans-serif;
+
+  --fs-1: 36px;
+  --fs-2: 32px;
+  --fs-3: 30px;
+  --fs-4: 24px;
+  --fs-5: 20px;
+  --fs-6: 18px;
+  --fs-7: 16px;
+  --fs-8: 15px;
+  --fs-9: 14px;
+  --fs-10: 13px;
+  --fs-11: 12px;
+  --fs-12: 11px;
+
+  --fw-500: 500;
+  --fw-700: 700;
+
+  --transition-1: 0.15s ease;
+  --transition-2: 0.25s ease-in;
+
+  --section-padding: 50px;
+  --carousel-padding: 10px; 
+}
+
+.movie-trailer-container iframe{
+  border-radius: 20px;
+}
+
+.movie-reviews {
+  color: white;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  transform: translate(0%, );
+}
+
+
+.movie-reviews ul {
+  list-style-type: none;
   padding: 0;
 }
 
-.container {
-  width: 100%;
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 20px;
-  background-color: #fff;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+.movie-reviews li {
+  margin-bottom: 40px;
+  border-radius: 10px;
+  text-align: justify;
+  line-height: 30px;
+  border-left: 3px solid #7DE2D1; /* Change color as desired */
+  padding: 10px;
+  color: white;
+  background-color: var(--dartgrey); /* Light gray background */
 }
 
-.movie-details {
-  text-align: left;
+.movie-reviews li:hover{
+  transform: scale(1.1);
+  transition: var(--transition-2);
 }
 
-.movie-poster {
+.movie-reviews li:last-child {
+  margin-bottom: 0;
+}
+
+.movie-reviews li::before {
+  content: "\2014"; /* Unicode character for em dash */
+  display: inline-block;
+  margin-right: 5px;
+  color: var(--citrine); /* Same as review border color */
+}
+
+.userrev{
+  font-size: 30px;
+}
+
+.recommended-movies {
+  color: white;
+  margin-top: 30px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.recommended-movie {
   width: 200px;
-  height: auto;
-  display: block;
-  margin: 0 auto 20px;
+  margin: 10px;
+  text-align: center;
+  color: white;
+  padding: 10px;
+  border-radius: 10px;
+  transition: var(--transition-2);
 }
 
-.movie-title {
-  font-size: 24px;
-  margin: 20px 0;
-}
-
-.movie-release-date,
-.movie-overview,
-.movie-genres,
-.movie-runtime,
-.movie-rating,
-.movie-director,
-.movie-cast {
-  font-size: 18px;
-  margin: 10px 0;
-}
-
-.movie-trailer-container {
-  margin-top: 20px;
-}
-
-.movie-trailer {
+.recommended-movie img {
   width: 100%;
-  height: 315px;
-  max-width: 560px;
+  height: auto;
+  border-radius: 5px;
+}
+
+.recommended-movie:hover {
+  transform: scale(1.1);
+}
+
+.video-container{
+  width: 100%;
+  margin-bottom: 30px;
+  background-color: var(--dartgreystrong);
+}
+
+.video-container h1{
+  font-size: 30px;
+}
+
+.video-container iframe{
+  margin-top: 20px;
+  border-radius: 20px;
 }
