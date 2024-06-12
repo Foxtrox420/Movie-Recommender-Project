@@ -5,63 +5,47 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dart - Movie Recommendation</title>
-
-  <!-- favicon -->
+  <title>Dart - Movie Search</title>
   <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
-
-  <!-- custom css link -->
   <link rel="stylesheet" href="./assets/css/style.css">
-
-  <!-- google font link -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <!-- 
-    small icon template
-   -->
-   <link rel="icon" type="image/x-icon" href="./assets/images/compact logo.png">
+  <link rel="icon" type="image/x-icon" href="./assets/images/compactlogo.png">
 </head>
 
 <body id="top">
-
-  <!-- HEADER -->
   <header class="header" data-header>
     <div class="container">
-
       <div class="overlay" data-overlay></div>
-
       <a href="./index.html" class="logo">
         <img src="./assets/images/dartlogo.png">
       </a>
-
       <div class="header-actions">
         <a href="moviesearch.html" class="search-btn">
           <ion-icon name="search-outline"></ion-icon>
         </a>
-        <button class="btn btn-primary">Sign in</button>
+        <a href="./sign-in-system/signin.html">
+          <button class="btn btn-primary">Sign in</button>
+        </a>
       </div>
-
       <button class="menu-open-btn" data-menu-open-btn>
         <ion-icon name="reorder-two"></ion-icon>
       </button>
-
       <nav class="navbar" data-navbar>
         <div class="navbar-top">
           <a href="./index.html" class="logo">
-            <img src="./assets/images/logo2.png" alt="Filmlane logo">
+            <img src="./assets/images/logo2.png" alt="Dart logo">
           </a>
           <button class="menu-close-btn" data-menu-close-btn>
             <ion-icon name="close-outline"></ion-icon>
           </button>
         </div>
-
         <ul class="navbar-list">
-          <li><a href="./index.html" class="navbar-link">Recommendation engine</a></li>
+          <li><a href="./recommend.html" class="navbar-link">Recommendation engine</a></li>
           <li><a href="./community.html" class="navbar-link">Community</a></li>
           <li><a href="./moviedatabase.html" class="navbar-link">Movie Database</a></li>
         </ul>
-
         <ul class="navbar-social-list">
           <li><a href="#" class="navbar-social-link"><ion-icon name="logo-twitter"></ion-icon></a></li>
           <li><a href="#" class="navbar-social-link"><ion-icon name="logo-facebook"></ion-icon></a></li>
@@ -72,7 +56,6 @@
       </nav>
     </div>
   </header>
-  <!-- Main content -->
   <section class="empty">
   </section>
   <section class="search-section">
@@ -82,45 +65,34 @@
     <div id="searchResults"></div>
     <div id="recommendations"></div>
   </section>
-
   <footer class="footer">
     <div class="footer-top">
       <div class="container">
-
         <div class="footer-brand-wrapper">
-
           <a href="./index.html" class="logo">
-            <img src="./assets/images/logo2.png" alt="Filmlane logo">
+            <img src="./assets/images/dartlogo.png" alt="Dart logo">
           </a>
         </div>
-
         <div class="divider"></div>
-
         <div class="quicklink-wrapper">
           <a>
             Dart is your one stop movie site that provides accurate and reliable movie database. 
             Find your movies with dart now!
           </a>
         </div>
-
       </div>
     </div>
-
     <div class="footer-bottom">
       <div class="container">
-
         <p class="copyright">
           &copy; 2024 <a href="#">Dart</a>. All Rights Reserved
         </p>
-      </div>
-      
+      </div>    
     </div>
-
   </footer>
 
   <script src="./assets/js/model.js"></script> <!-- Might have to change this if using different folder-->
   <script src="./assets/js/script.js"></script>
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </body>
 </html>
