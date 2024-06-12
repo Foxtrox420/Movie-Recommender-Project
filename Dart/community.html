@@ -5,29 +5,29 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dart - Movie Recommendation</title>
-
+  <title>Dart - Community</title>
   <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="./assets/css/style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="icon" type="image/x-icon" href="./assets/images/compact logo.png">
+  <link rel="icon" type="image/x-icon" href="./assets/images/compactlogo.png">
 </head>
 
 <body id="top">
-
   <header class="header" data-header>
     <div class="container">
       <div class="overlay" data-overlay></div>
-      <a href="./index.html" class="logo">
-        <img src="./assets/images/logo2.png" alt="Filmlane logo">
-      </a>
+        <a href="./index.html" class="logo">
+          <img src="./assets/images/dartlogo.png" alt="Dart logo">
+        </a>
       <div class="header-actions">
         <a href="moviesearch.html" class="search-btn">
           <ion-icon name="search-outline"></ion-icon>
         </a>
-        <button class="btn btn-primary">Sign in</button>
+        <a href="./sign-in-system/signin.html">
+          <button class="btn btn-primary">Sign in</button>
+        </a>
       </div>
       <button class="menu-open-btn" data-menu-open-btn>
         <ion-icon name="reorder-two"></ion-icon>
@@ -42,7 +42,7 @@
           </button>
         </div>
         <ul class="navbar-list">
-          <li><a href="./index.html" class="navbar-link">Recommendation engine</a></li>
+          <li><a href="./recommend.html" class="navbar-link">Recommendation engine</a></li>
           <li><a href="./community.html" class="navbar-link">Community</a></li>
           <li><a href="./moviedatabase.html" class="navbar-link">Movie Database</a></li>
         </ul>
@@ -65,47 +65,44 @@
     </div>
   </div>
 
-    <!-- Comment Section -->
-    <div class="comment-tab">
-      <h1>Post a new forum</h1>
-      <div class="comment-form">
-        <input type="text" id="username" class="comment-input" placeholder="Your name" required>
-        <textarea id="comment-text" class="comment-input" placeholder="Your comment" required></textarea>
-        <button id="post-comment" class="comment-button">Post Comment</button>
-      </div>
+  <div class="comment-tab">
+    <h1>Post a new forum</h1>
+    <div class="comment-form">
+      <input type="text" id="username" class="comment-input" placeholder="Your name" required>
+      <textarea id="comment-text" class="comment-input" placeholder="Your comment" required></textarea>
+      <button id="post-comment" class="comment-button">Post Comment</button>
     </div>
-    <div class="forum-posts">
-    <section class="comments-section">
-        <div id="comments-container"></div>
-    </section>
-    <template id="comment-template">
-      <div class="comment">
-        <div class="comment-user-icon">
-          <ion-icon name="person-circle-outline"></ion-icon>
-        </div>
-        <div class="comment-body">
-          <div class="comment-header">
-            <span class="comment-username"></span>
-            <div class="comment-votes">
-              <ion-icon name="arrow-up-outline"></ion-icon>
-              <span class="vote-count">0</span>
-              <ion-icon name="arrow-down-outline"></ion-icon>
-            </div>
+  </div>
+  <div class="forum-posts">
+  <section class="comments-section">
+    <div id="comments-container"></div>
+  </section>
+  <template id="comment-template">
+    <div class="comment">
+      <div class="comment-user-icon">
+        <ion-icon name="person-circle-outline"></ion-icon>
+      </div>
+      <div class="comment-body">
+        <div class="comment-header">
+          <span class="comment-username"></span>
+          <div class="comment-votes">
+            <ion-icon name="arrow-up-outline"></ion-icon>
+            <span class="vote-count">0</span>
+            <ion-icon name="arrow-down-outline"></ion-icon>
           </div>
-          <div class="comment-text"></div>
-          <button class="reply-button">Reply</button>
         </div>
-      </div>
-    </template>
+        <div class="comment-text"></div>
+        <button class="reply-button">Reply</button>
+        </div>
     </div>
-
-
+  </template>
+  
   <footer class="footer">
     <div class="footer-top">
       <div class="container">
         <div class="footer-brand-wrapper">
           <a href="./index.html" class="logo">
-            <img src="./assets/images/logo2.png" alt="Filmlane logo">
+            <img src="./assets/images/dartlogo.png" alt="Dart logo">
           </a>
         </div>
         <div class="divider"></div>
@@ -117,7 +114,6 @@
         </div>
       </div>
     </div>
-
     <div class="footer-bottom">
       <div class="container">
         <p class="copyright">
@@ -126,15 +122,11 @@
       </div>
     </div>
   </footer>
-
   <a href="#top" class="go-top" data-go-top>
     <ion-icon name="chevron-up"></ion-icon>
   </a>
 
-
   <script src="./assets/js/script.js"></script>
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </body>
-
 </html>
