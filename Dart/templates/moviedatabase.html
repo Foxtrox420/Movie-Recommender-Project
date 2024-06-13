@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dart - Movie Database</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/db.css') }}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='images/compactlogo.png') }}">
+</head>
+
+<body id="top">
+  <div class="empty"></div>
+  <header class="header" data-header>
+    <div class="container">
+      <div class="overlay" data-overlay></div>
+      <a href="{{ url_for('landing')}}" class="logo">
+        <img src="{{ url_for('static', filename='images/dartlogo.png') }}">
+      </a>
+      <div class="header-actions">
+        <a href="{{ url_for('moviesearch') }}" class="search-btn">
+          <ion-icon name="search-outline"></ion-icon>
+        </a>
+        {% if 'username' in session %}
+        <h1 class="username">{{ session['username'] }}</h1>
+        <a href="{{ url_for('logout') }}">
+          <button class="btn btn-primary">Sign Out</button>
+        </a>
+        {% else %}
+        <a href="{{ url_for('signin') }}">
+          <button class="btn btn-primary">Sign in</button>
+        </a>
+        {% endif %}
+      </div>
+      <button class="menu-open-btn" data-menu-open-btn>
+        <ion-icon name="reorder-two"></ion-icon>
+      </button>
+
+      <nav class="navbar" data-navbar>
+        <div class="navbar-top">
+          <a href="{{ url_for('landing') }}" class="logo">
+            <img src="{{ url_for('static', filename='images/dartlogo.png') }}" alt="Dart logo">
+          </a>
+          <button class="menu-close-btn" data-menu-close-btn>
+            <ion-icon name="close-outline"></ion-icon>
+          </button>
+        </div>
+        <ul class="navbar-list">
+          <li>
+            <a href="{{ url_for('recommend') }}" class="navbar-link">Recommendation engine</a>
+          </li>
+          <li>
+            <a href="{{ url_for('community') }}" class="navbar-link">Community</a>
+          </li>
+          <li>
+            <a href="{{ url_for('moviedatabase') }}" class="navbar-link">Movie Database</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <div class="container">
+    <div class="movie-db-title">
+      <h1>Movie Database</h1>
+    </div>
+  </div>
+  <main>
+    <div class="container">
+      <div class="filter-section">
+        <select id="genre-filter" class="filter-dropdown">
+          <option value="">Select Genre</option>
+          <option value="28">Action</option>
+          <option value="35">Comedy</option>
+          <option value="18">Drama</option>
+        </select>
+        <select id="year-filter" class="filter-dropdown">
+          <option value="">Select Year</option>
+        </select>
+
+        <select id="rating-filter" class="filter-dropdown">
+          <option value="">Select Rating</option>
+          <option value="7">Above 7</option>
+          <option value="8">Above 8</option>
+          <option value="9">Above 9</option>
+        </select>
+
+        <button id="filter-button" class="btn btn-primary">Filter</button>
+      </div>
+      <div class="movie-grid"></div>
+    </div>
+  </main>
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="footer-brand-wrapper">
+          <a href="./index.html" class="logo">
+            <img src="{{ url_for('static', filename='images/dartlogo.png') }}" alt="Dart logo">
+          </a>
+        </div>
+        <div class="divider"></div>
+        <div class="quicklink-wrapper">
+          <a>
+            Dart is your one stop movie site that provides accurate and reliable movie database. 
+            Find your movies with dart now!
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p class="copyright">
+          &copy; 2024 <a href="#">Dart</a>. All Rights Reserved
+        </p>
+      </div>
+    </div>
+  </footer>
+  <a href="#top" class="go-top" data-go-top>
+    <ion-icon name="chevron-up"></ion-icon>
+  </a>
+  <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/db.js') }}"></script>
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+</body>
+</html>

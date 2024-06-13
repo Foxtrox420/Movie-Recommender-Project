@@ -1,0 +1,65 @@
+.movie-grid {
+  margin-top: 20px; 
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); 
+  gap: 10px;
+}
+  
+.movie-poster {
+  width: 100%;
+  height: auto; 
+  position: relative; 
+  transition: filter 0.3s ease;
+}
+  
+.movie-poster:hover {
+  filter: brightness(0.7); 
+}
+  
+.movie-title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.3s ease; 
+}
+
+.filter-section {
+  margin: 20px 0;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+  
+.filter-section option{
+  color: white;
+}
+
+.filter-dropdown {
+  border-style: solid;
+  border-color: #7DE2D1;
+  border-radius: 5px;
+  background-color: #2B2C28;
+  padding: 10px;
+  font-size: 16px;
+  color: white;
+}
+  
+.btn-primary {
+  padding: 10px 20px;
+  font-size: 16px;
+}
+  
+main{
+  margin-top: 100px;
+}
+
+.movie-db-title h1{
+  font-size: 36px;
+  translate: 0% 100%;
+}

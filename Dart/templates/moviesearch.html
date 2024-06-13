@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dart - Movie Search</title>
+  <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='images/compactlogo.png') }}">
+</head>
+
+<body id="top">
+  <header class="header" data-header>
+    <div class="container">
+      <div class="overlay" data-overlay></div>
+      <a href="{{ url_for('landing')}}" class="logo">
+        <img src="{{ url_for('static', filename='images/dartlogo.png') }}">
+      </a>
+      <div class="header-actions">
+        <a href="{{ url_for('moviesearch') }}" class="search-btn">
+          <ion-icon name="search-outline"></ion-icon>
+        </a>
+        {% if 'username' in session %}
+        <h1 class="username">{{ session['username'] }}</h1>
+        <a href="{{ url_for('logout') }}">
+          <button class="btn btn-primary">Sign Out</button>
+        </a>
+        {% else %}
+        <a href="{{ url_for('signin') }}">
+          <button class="btn btn-primary">Sign in</button>
+        </a>
+        {% endif %}
+      </div>
+      <button class="menu-open-btn" data-menu-open-btn>
+        <ion-icon name="reorder-two"></ion-icon>
+      </button>
+
+      <nav class="navbar" data-navbar>
+        <div class="navbar-top">
+          <a href="{{ url_for('landing') }}" class="logo">
+            <img src="{{ url_for('static', filename='images/dartlogo.png') }}" alt="Dart logo">
+          </a>
+          <button class="menu-close-btn" data-menu-close-btn>
+            <ion-icon name="close-outline"></ion-icon>
+          </button>
+        </div>
+        <ul class="navbar-list">
+          <li>
+            <a href="{{ url_for('recommend') }}" class="navbar-link">Recommendation engine</a>
+          </li>
+          <li>
+            <a href="{{ url_for('community') }}" class="navbar-link">Community</a>
+          </li>
+          <li>
+            <a href="{{ url_for('moviedatabase') }}" class="navbar-link">Movie Database</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <section class="empty">
+  </section>
+  <section class="search-section">
+    <h1><strong>Movie</strong> Search</h1>
+    <input type="text" id="movieInput" placeholder="Enter a movie title" class="searchbar">
+    <button id="searchButton" class="btn btn-primary">Search</button>
+    <div id="searchResults"></div>
+    <div id="recommendations"></div>
+  </section>
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="footer-brand-wrapper">
+          <a href="./index.html" class="logo">
+            <img src="{{ url_for('static', filename='images/dartlogo.png') }}" alt="Dart logo">
+          </a>
+        </div>
+        <div class="divider"></div>
+        <div class="quicklink-wrapper">
+          <a>
+            Dart is your one stop movie site that provides accurate and reliable movie database. 
+            Find your movies with dart now!
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p class="copyright">
+          &copy; 2024 <a href="#">Dart</a>. All Rights Reserved
+        </p>
+      </div>    
+    </div>
+  </footer>
+
+  <script src="{{ url_for('static', filename='js/model.js') }}"></script> <!-- Might have to change this if using different folder-->
+  <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+</body>
+</html>
